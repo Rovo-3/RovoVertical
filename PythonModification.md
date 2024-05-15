@@ -12,7 +12,3 @@ You can change the key accordingly.
 To know the key number and its type, go to key_received on the My_joystick class and uncomment the commented code.
 
 ![alt text](./assets/keyModifications.png)
-
-
-
-<!-- ![alt text](image.png) -->

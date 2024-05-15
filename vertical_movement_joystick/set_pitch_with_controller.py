@@ -283,7 +283,6 @@ if __name__ == "__main__":
             print("Waiting for the custom mode command")
     except KeyboardInterrupt:
         print("KeyboardInterrupt detected, stopping threads...")
-        my_sub.disarming()     
-        # sys.exit(0)
+        my_sub.disarming()
         os._exit(1)
         # print("All threads have finished.")
