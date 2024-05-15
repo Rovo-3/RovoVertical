@@ -117,7 +117,7 @@ class My_joystick:
             "pitch_up_key_number":5,
         }
         self.activate_vertical_mode = False
-        self.json_path = "C:/Users/Admin/Desktop/json_data/verticalMode.json"
+        self.json_path = "C:/Users/Admin/Desktop/RovoVertical/vertical_movement_joystick/verticalMode.json"
         self.vertical_data={
             "isVerticalActive" : 0
         }

@@ -1,6 +1,8 @@
 # QT BackEnd Modification
 This steps is required if you want to integrate the python control code to the QGC. QGC will show whether the cleaning mode is activated or not, and also can activate the cleaning mode by GUI itself.
 
+If this step is not followed, cleaning mode can only be activated by joystick (not GUI)
+
 ## Modification of Vehicle.h
 Navigate and open Vehicle.h, insert this 2 line of code inside Vehicle class >> Public <br>
 
@@ -50,7 +52,12 @@ void Vehicle::updateJsonData(QString path, QString key, int data){
 
 ## QT FrontEnd Modification
 Navigate to ModeIndicator.qml and modify/replace with this file
-[ModeIndicator.qml](./assets/qml/ModeIndicator.qml)
+[ModeIndicator.qml](./assets/qml/ModeIndicator.qml).
+
+[JSON file](/vertical_movement_joystick/verticalMode.json) by default is stored in the same path where the main python script is located. If you extract this to desktop, the path should be like this 
+`C:/Users/<yourcomputername>/Desktop/RovoVertical/vertical_movement_joystick/verticalMode.json`.
+
+Search for path property in the [ModeIndicator.qml](./assets/qml/ModeIndicator.qml), and change it accordingly.
 
 ## Other
 ### Tips:

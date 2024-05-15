@@ -1,7 +1,16 @@
-# Connection Modification
+# Python Code Modification
+Consider changing Pymavlink connection, JSON path, and Key Button (optional) based on you current status of device (ROV output and Control unit name)
+
+## Pymavlink Connection
 Navigate to the mavlink connection [code](set_pitch_with_controller.py) and modify the pymavlink connection to the ROV.
 
 ![Mavlink Connection](./assets/mavlinkconnection.png)
+
+# JSON path
+[JSON file](/vertical_movement_joystick/verticalMode.json) by default is stored in the same path where the main script is located. If you extract this to desktop, the path should be like this 
+`C:/Users/<yourcomputername>/Desktop/RovoVertical/vertical_movement_joystick/verticalMode.json`.
+
+Search for json_path property in the My_Joystick class, and change it accordingly.
 
 
 # Key Button Modification
