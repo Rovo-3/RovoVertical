@@ -58,7 +58,7 @@ Row {
             property var _activeVehicle:    QGroundControl.multiVehicleManager.activeVehicle
             property var _flightModes:      _activeVehicle ? _activeVehicle.flightModes : [ ]
             property var modeNow: _activeVehicle.flightMode
-            property string path: "C:/Users/Admin/Desktop/json_data/verticalMode.json"
+            property string path: "C:/Users/Admin/Desktop/RovoVertical/vertical_movement_joystick/verticalMode.json"
 
             onModeNowChanged: {
                 console.log("Mode Changed!!");
@@ -74,19 +74,19 @@ Row {
                 var statusVertical = _activeVehicle.readJsonFile(path)
                 if(_activeVehicle.flightMode === "Depth Hold" && checked){
                         console.log("Vertical Mode Activated");
-                       _activeVehicle.updateJsonData(1);
+                       _activeVehicle.updateJsonData(path, "isVerticalActive", 1);
                         return;
                 }
                 if (statusVertical["isVerticalActive"] === checked){
                     return; //do not update the JSON file
                 }
-                _activeVehicle.updateJsonData(0);
+                _activeVehicle.updateJsonData(path, "isVerticalActive", 0);
                 checked = false
             }
         }
         Timer {
                 property var _activeVehicle: QGroundControl.multiVehicleManager.activeVehicle
-                property string path: "C:/Users/Admin/Desktop/json_data/verticalMode.json"
+                property string path: "C:/Users/Admin/Desktop/RovoVertical/vertical_movement_joystick/verticalMode.json"
                 id: timerCleaning
                 interval: 1000 // Check every second (adjust as needed)
                 repeat: true
