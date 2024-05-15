@@ -6,7 +6,7 @@ Navigate and open Vehicle.h, insert this 2 line of code inside Vehicle class >> 
 
 ```
     Q_INVOKABLE QJsonObject readJsonFile(QString path);
-    Q_INVOKABLE void updateJsonData(int data);
+    Q_INVOKABLE void updateJsonData(QString path, QString key, int data);
 ```
 ![alt text](./assets/vehicleh.png)
 
@@ -24,8 +24,8 @@ QJsonObject Vehicle::readJsonFile(QString path){
     return json; //return json data
 }
 
-void Vehicle::updateJsonData(int data){
-    QFile file("C:/Users/Admin/Desktop/json_data/verticalMode.json");
+void Vehicle::updateJsonData(QString path, QString key, int data){
+    QFile file(path);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         qDebug() << "Failed to open file to read";
         return;
@@ -37,7 +37,7 @@ void Vehicle::updateJsonData(int data){
         return;
     }
     QJsonObject json = doc.object();
-    json["isVerticalActive"] = data; // changing the value using parameter
+    json[key] = data; // changing the value using parameter
     doc.setObject(json); //change the document value
     file.write(doc.toJson(QJsonDocument::JsonFormat::Indented)); //write to the file
     file.encodeName("UTF-8");
