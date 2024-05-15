@@ -9,11 +9,11 @@ Ensure that QGC QT project can be accessed and follow the steps below to do QGC 
 Navigate and open `Vehicle.h`, insert this 2 line of code inside `Vehicle` class >> `Public` <br>
 
 ```
-1    Q_INVOKABLE QJsonObject readJsonFile(QString path);
-2    Q_INVOKABLE void updateJsonData(QString path, QString key, int data);
+Q_INVOKABLE QJsonObject readJsonFile(QString path);
+Q_INVOKABLE void updateJsonData(QString path, QString key, int data);
 ```
 
-Example:
+Example:<br>
 ![alt text](./assets/vehicleh.png)
 
 ## 2. Modification to Vehicle.cc
@@ -52,7 +52,7 @@ void Vehicle::updateJsonData(QString path, QString key, int data){
 }
 ```
 
-Example: 
+Example:<br>
 ![alt text](./assets/vehiclecc.png)
 
 ## 3. QT FrontEnd Modification
@@ -66,7 +66,7 @@ Search for path property in the [ModeIndicator.qml](./assets/qml/ModeIndicator.q
 
 ## 4. Other
 ### Tips:
-For easier navigation, use the search on QT Creator App.
+For easier navigation, use the search on QT Creator App.<br>
 ![alt text](./assets/search.png)
 
 ### Limitations:

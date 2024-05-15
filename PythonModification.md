@@ -2,7 +2,7 @@
 Change Pymavlink connection, JSON path, and Key Button (optional) based on your current status of device (ROV output and Control unit name)
 
 ## Pymavlink Connection
-Navigate to the mavlink connection [code](set_pitch_with_controller.py) and modify the pymavlink connection to the ROV.
+Navigate to the mavlink connection [code](/vertical_movement_joystick/set_pitch_with_controller.py) and modify the pymavlink connection to the ROV.
 
 ![Mavlink Connection](./assets/mavlinkconnection.png)
 
