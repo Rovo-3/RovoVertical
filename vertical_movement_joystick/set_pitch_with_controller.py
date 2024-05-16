@@ -94,7 +94,7 @@ class StoppableThread(threading.Thread):
         return self._stop_event.is_set()
     
 class My_joystick:
-    def __init__(self,yaw_desired=0, pitch_desired=90):
+    def __init__(self,yaw_desired=0, pitch_desired=30):
         
         print("Initialization of My_joystick")
         self.yaw_desired = yaw_desired
@@ -279,6 +279,7 @@ if __name__ == "__main__":
                 time.sleep(0.5)
                 # passing next code and go back to the new loop
                 pass
+            my_joystick.pitch_desired = 30
             time.sleep(1)
             print("Waiting for the custom mode command")
     except KeyboardInterrupt:
