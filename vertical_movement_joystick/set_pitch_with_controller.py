@@ -279,7 +279,8 @@ if __name__ == "__main__":
                 time.sleep(0.5)
                 # passing next code and go back to the new loop
                 pass
-            my_joystick.pitch_desired = 30
+            else:
+                my_joystick.pitch_desired = 30
             time.sleep(1)
             print("Waiting for the custom mode command")
     except KeyboardInterrupt:
